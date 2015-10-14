@@ -1,0 +1,28 @@
+#align_rest{
+	width: 80%
+}
+
+#align_signal{
+	width: 40%
+}
+
+#align_most{
+	width: 15%;
+}
+
+#align_resource{
+	width: 80%
+}
+
+#edit_rest{
+	padding-left: 0;
+}
+
+#general{
+	box-shadow: 0px 10px 10px #747474;
+	border-radius: 5px;
+}
+
+h1{
+	color: #5cb85c;
+}
