@@ -103,12 +103,14 @@ $expression = str_split($fo);
 					}
 				?>
 				<br><br>
-				<div class="row">
-					<select id="align_most" class ="form-control" name="maximizar_minimizar">
-					  <p>Escolha maximizar ou minimizar:</p>
-					  <option name="max" value="maximizar">Maximizar</option>
-				  	</select><br><br>
-				  	<input name="enviar" type="submit" value="Enviar" class="btn btn-success"><br><br>
+				<div class="container">
+					<div class="row">
+						<select id="align_most" class ="form-control" name="maximizar_minimizar">
+						  <p>Escolha maximizar ou minimizar:</p>
+						  <option name="max" value="maximizar">Maximizar</option>
+					  	</select><br><br>
+					  	<input name="enviar" type="submit" value="Enviar" class="btn btn-success"><br><br>
+					</div>
 				</div>
 			</form>
 			</div>
