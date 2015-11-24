@@ -1,8 +1,8 @@
 <html ng-app>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<title>Simplex</title>
 </head>
 <body>
@@ -36,7 +36,12 @@
 			<input class="btn btn-success" type="submit" tabindex="-1" value="Calcular" >
 									
 		</form>
-	</div>
+		<br><br>
+		<hr style="box-shadow:0px 1px 2px green;">
+		<h2 class="text-center">Algoritmo Knapsack</h2>
+		<h3 class="text-center"><a href="http://knapsack-web.esy.es/knapsack.php" target="_blank">Knapsack</a></h3>
+		<hr style="box-shadow:0px 1px 2px green;">
+	</div>	
 </div>
 </body>
 

@@ -1,7 +1,7 @@
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<title>Simplex</title>
 </head>
 <body>
