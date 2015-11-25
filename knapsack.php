@@ -1,25 +1,24 @@
-<!--0-1 Knapsack Problem Solve with memoization optimize and index returns
+<!--
 $peso = peso do item
 $valor = valor do item
 $i = index
 $peso_disponivel = peso disponivel
 $memorizar_itens = memorizar itens array
-It works uncorrectly! For examle if $aw=4. Max value is true, but no "Array Indices" and its parameters are displayed
 -->
+
 <link rel="stylesheet" type="text/css" href="bootstrap.css">
 <?php  
 function Mochila($peso,$valor,$i,$peso_disponivel,&$memorizar_itens) {
 
     global $num_chamadas;
     $num_chamadas ++;
-    //echo "Called with i=$i, peso_disponivel=$peso_disponivel<br>";
 
-    // Return memo if we have one
+    // Retorna item memorizado se tiver um
     if (isset($memorizar_itens[$i][$peso_disponivel])) {
         return array( $memorizar_itens[$i][$peso_disponivel], $memorizar_itens['escolhido'][$i][$peso_disponivel] );
     } else {
 
-        // At end of decision branch
+        
         if ($i == 0) {
             if ($peso[$i] <= $peso_disponivel) { // Esse item irá caber?
                 $memorizar_itens[$i][$peso_disponivel] = $valor[$i]; // Memoriza esse item
@@ -34,23 +33,21 @@ function Mochila($peso,$valor,$i,$peso_disponivel,&$memorizar_itens) {
             }
         }   
 
-        // Not at end of decision branch..
-        // Get the result of the next branch (without this one)
+        
         list ($without_i,$without_PI) = Mochila($peso, $valor, $i-1, $peso_disponivel,$memorizar_itens,$itens_escolhidos);
 
-        if ($peso[$i] > $peso_disponivel) { // Does it return too many?
+        if ($peso[$i] > $peso_disponivel) { 
 
-            $memorizar_itens[$i][$peso_disponivel] = $without_i; // Memo without including this one
-            $memorizar_itens['escolhido'][$i][$peso_disponivel] = array(); // and a blank array entry...
-            return array($without_i,array()); // and return it
+            $memorizar_itens[$i][$peso_disponivel] = $without_i; 
+            $memorizar_itens['escolhido'][$i][$peso_disponivel] = array();
+            return array($without_i,array());
 
         } else {
 
-            // Get the result of the next branch (WITH this one picked, so available weight is reduced)
+            
             list ($with_i,$with_PI) = Mochila($peso, $valor, ($i-1), ($peso_disponivel - $peso[$i]),$memorizar_itens,$itens_escolhidos);
-            $with_i += $valor[$i];  // ..and add the value of this one..
+            $with_i += $valor[$i];
 
-            // Get the greater of WITH or WITHOUT
             if ($with_i > $without_i) {
                 $res = $with_i;
                 $escolhido = $with_PI;
@@ -60,9 +57,9 @@ function Mochila($peso,$valor,$i,$peso_disponivel,&$memorizar_itens) {
                 $escolhido = $without_PI;
             }
 
-            $memorizar_itens[$i][$peso_disponivel] = $res; // Store it in the memo
-            $memorizar_itens['escolhido'][$i][$peso_disponivel] = $escolhido; // and store the picked item
-            return array ($res,$escolhido); // and then return it
+            $memorizar_itens[$i][$peso_disponivel] = $res; 
+            $memorizar_itens['escolhido'][$i][$peso_disponivel] = $escolhido; 
+            return array ($res,$escolhido); 
         }   
     }
 }
@@ -79,7 +76,7 @@ $memorizar_itens = array();
 $itens_escolhidos = array();
 
 
-## Resolver
+## Ação
 list ($item_memorizado,$itens_escolhidos) = Mochila($peso_itens,$valor_itens, sizeof($valor_itens) -1, 15,$memorizar_itens,$itens_escolhidos);
 
 ## Resultado a ser mostrado
