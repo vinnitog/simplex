@@ -82,8 +82,10 @@ list ($item_memorizado,$itens_escolhidos) = Mochila($peso_itens,$valor_itens, si
 ## Resultado a ser mostrado
 echo "<h2 class=\"text-center\">Knapsack - Programação Dinâmica</h2>";
 echo "<div style=\"margin-left:100px\" class=\"container\">";
-echo "<br><b>Itens:</b><br>".join(", ",$itens_existentes)."<br><br>";
-echo "<b>Maior valor Encontrado:</b><br>$item_memorizado"." $"."<br><br>";
+echo "<br><b>Itens:</b><br>".join(", ",$itens_existentes)."<br>";
+echo "<br><b>Valor dos Itens em $:</b><br>".join(", ",$valor_itens)."<br>";
+echo "<br><b>Peso dos Itens em KG:</b><br>".join(", ",$peso_itens)."<br><br>";
+echo "<b>Valor total encontrado:</b><br>$item_memorizado"." $"."<br><br>";
 //echo "<b>Array Indices:</b><br>".join(",",$itens_escolhidos)."<br><br>";
 
 
